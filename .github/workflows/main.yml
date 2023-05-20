@@ -12,9 +12,10 @@ jobs:
     # the checkout action persists the passed credentials by default
     # subsequent git commands will pick them up automatically
     - name: Checkout repository
-      uses: actions/checkout@v1.0.0
+      uses: Bhacaz/checkout-files@v2
       with:
-        ref: development build/*
+        files: /build/
+        branch: development
         token: ${{secrets.PAT}}
     - name: Set up Node.js
       uses: actions/setup-node@v1
