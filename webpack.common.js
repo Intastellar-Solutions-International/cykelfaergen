@@ -10,12 +10,6 @@ module.exports = {
       template: "src/index.html"
     }),
   ],
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'build'),
-    clean: true,
-    publicPath: "/"
-  },
   module: {
     rules: [
       {
