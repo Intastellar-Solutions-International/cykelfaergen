@@ -3,7 +3,7 @@ import "./Header.css";
 export default function Header(){
     return (<>
         <header className="main-header">
-            <h1>Parkinpeace.eu</h1>
+            <h1>Cykelfaergen.info</h1>
         </header>
     </>);
 }
