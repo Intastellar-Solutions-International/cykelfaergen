@@ -12,16 +12,19 @@ import DevContainer from "./components/DevContainer/DevContainer.js";
 export default function App(){
     return (<>
         <Router>
+            <Header />
             <div className="grid">
-                <Header />
                 <Switch>
                     <Route path="/" exact>
                         <DevContainer />
                     </Route>
+                    <Route path="/price" exact>
+
+                    </Route>
                     <Redirect to="/" />
                 </Switch>
-                <Footer />
             </div>
+            <Footer />
         </Router>
     </>);
 }

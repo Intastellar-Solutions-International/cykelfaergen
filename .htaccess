@@ -1,4 +1,4 @@
-DirectoryIndex /production/dist/index.html
+DirectoryIndex /production/build/index.html
 
 RewriteEngine On
 
@@ -15,6 +15,6 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
 RewriteCond %{HTTP_HOST} !([^\*]+).parkinpeace.eu$
-RewriteRule . /production/dist/index.html [L]
+RewriteRule . /production/build/index.html [L]
 RewriteCond %{HTTP_HOST} dev.parkinpeace.eu$
-RewriteRule . /development/dist/index.html [L]
+RewriteRule . /development/build/index.html [L]
