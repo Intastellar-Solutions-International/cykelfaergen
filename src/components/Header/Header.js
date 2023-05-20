@@ -12,6 +12,7 @@ const region = (localStorage.getItem("region")===null) ? "da" : localStorage.get
 
 export default function Header(){
     const [location, setLocation] = useContext(LocationContext);
+
     return (<>
         <header className="main-header">
             <section className="small-topHeader">
@@ -39,8 +40,21 @@ export default function Header(){
                     })
                 }
                 </nav>
+                <section>
+
+                </section>
+                <section className="regionSelectorContainer">
+                    <button tabindex="1" className="regionSelector" title="Vælg sprog">
+                        <img src="https://www.cykelfaergen.info/assets/icons/flag-denmark.jpg" width="44px" height="25px" alt="Dansk flag" /> <span class="currentRegion">Dansk</span>
+                    </button>
+                    <div className="regionSelector-items">
+                        <div className="regionSelector-items-container">
+                            <button onClick={(e) =>{ setLocation("en"), console.log(location) }} rel="nofollow" data-language="en-GB" title="English"><img className="flag" width="44px" height="35px" alt="UK flag - Valg engelsk sprog" src="https://www.cykelfaergen.info/assets/icons/uk.webp" /> English</button>
+                            <button onClick={(e) =>{ setLocation("de") }} rel="nofollow" data-language="de-DE" title="Deutsch"><img className="flag" width="44px" height="35px" alt="Tysk flag - Valg tysk sprog" src="https://www.cykelfaergen.info/assets/icons/flag-germany.jpg" /> Deutsch</button>
+                        </div>
+                    </div>
+                </section>
             </section>
-            <section className="header"></section>
             <div style={{clear: "both"}}></div>
         </header>
     </>);

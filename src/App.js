@@ -1,4 +1,4 @@
-const { useState, useEffect, useRef, createContext } = React;
+const { useState, useEffect, useRef, createContext, useMemo } = React;
 const Router = window.ReactRouterDOM.BrowserRouter;
 const Route =  window.ReactRouterDOM.Route;
 const Switch = window.ReactRouterDOM.Switch;
@@ -14,12 +14,13 @@ export const LocationContext = createContext(null);
 export default function App(){
     const [location, setLocation] = useState("dk");
 
-    useEffect(() => {
-        getLocation(setLocation);
-    },[]);
+    const provided = useMemo(() => ({
+        value: location,
+        setLocation: (location) => setLocation(location)
+    }, [location, setLocation]));
     return (<>
         <Router>
-            <LocationContext.Provider value={ [location, setLocation] }>
+            <LocationContext.Provider value={ provided }>
                 <Header />
                 <div className="grid">
                     <Switch>

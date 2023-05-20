@@ -24,5 +24,9 @@ export default {
             type: "dropdown",
             link: ""
         }
+    },
+    banner: {
+        title: "Travel to a new land in just 25 minutes",
+        subTitle: ""
     }
 }
