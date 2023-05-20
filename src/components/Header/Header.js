@@ -1,7 +1,7 @@
-const { useState, useEffect, useRef } = React;
+const { useState, useEffect, useRef, useContext } = React;
 const NavLink = window.ReactRouterDOM.NavLink;
+import { LocationContext } from "../../App";
 import { local } from "../../localization/local";
-import getLocation from "../../api/getLocation";
 
 import "./Header.css";
 
@@ -11,12 +11,7 @@ const region = (localStorage.getItem("region")===null) ? "da" : localStorage.get
 
 
 export default function Header(){
-    const [location, setLocation] = useState("dk");
-
-    useEffect(() => {
-        getLocation(setLocation);
-    },[]);
-
+    const [location, setLocation] = useContext(LocationContext);
     return (<>
         <header className="main-header">
             <section className="small-topHeader">

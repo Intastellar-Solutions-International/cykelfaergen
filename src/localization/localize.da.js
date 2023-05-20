@@ -24,5 +24,9 @@ export default {
             type: "dropdown",
             link: ""
         }
+    },
+    banner: {
+        title: "Sejl til et nyt land på bare 25 min.",
+        subTitle: "Vi forbinder Danmark og Tyskland hen over Flensborg Fjord. Vi har siden 2019 skabt glæde ombord og en enestående oplevelse for turister og lokalbefolkningen i grænselandet."
     }
 }
