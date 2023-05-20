@@ -1,6 +1,7 @@
 const { useState, useEffect, useRef } = React;
 const NavLink = window.ReactRouterDOM.NavLink;
 import { local } from "../../localization/local";
+import getLocation from "../../api/getLocation";
 
 import "./Header.css";
 
@@ -8,7 +9,13 @@ import "./Header.css";
 
 const region = (localStorage.getItem("region")===null) ? "da" : localStorage.getItem("region");
 
+
 export default function Header(){
+    const [location, setLocation] = useState("dk");
+
+    useEffect(() => {
+        getLocation(setLocation);
+    },[]);
 
     return (<>
         <header className="main-header">
@@ -29,10 +36,10 @@ export default function Header(){
                 </section>
                 <nav className="navigation">
                 {
-                    Object.keys(local[region].navigation).map((key, index) => {
-                        return <NavLink to={local[region].navigation[key].link} style={({ isActive }) => ({ 
+                    Object.keys(local[location].navigation).map((key, index) => {
+                        return <NavLink to={local[location].navigation[key].link} style={({ isActive }) => ({ 
                                     color: isActive ? 'greenyellow' : 'blue' })}>
-                                    {local[region].navigation[key].name}
+                                    {local[location].navigation[key].name}
                                 </NavLink>
                     })
                 }
