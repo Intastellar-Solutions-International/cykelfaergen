@@ -6,7 +6,7 @@ module.exports = merge(common, {
   mode: 'development',
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dev'),
+    path: path.resolve(__dirname, 'build'),
     clean: true,
     publicPath: "/"
   },
@@ -16,7 +16,7 @@ module.exports = merge(common, {
     ignored: /node_modules/,
   },
   devServer: {
-    static: './dev',
+    static: './build',
     historyApiFallback: true,
   },
 });
