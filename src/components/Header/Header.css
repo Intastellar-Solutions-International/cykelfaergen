@@ -47,6 +47,13 @@
     font-size: 17px;
 }
 
+.header ul li a, .header ul li span {
+    display: inline-block;
+    text-decoration: none;
+    padding: 30px 15px;
+    position: relative;
+}
+
 .header .lang_chooser {
     display: flex;
     align-items: center;
