@@ -18,6 +18,9 @@ export default function App(){
                     <Route path="/" exact>
                         <DevContainer />
                     </Route>
+                    <Route path="/price" exact>
+
+                    </Route>
                     <Redirect to="/" />
                 </Switch>
             </div>

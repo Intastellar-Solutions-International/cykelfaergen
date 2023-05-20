@@ -1,5 +1,5 @@
 const { useState, useEffect, useRef } = React;
-const Link = window.ReactRouterDOM.Link;
+const NavLink = window.ReactRouterDOM.NavLink;
 import { local } from "../../localization/local";
 
 import "./Header.css";
@@ -23,18 +23,19 @@ export default function Header(){
             </section>
             <section className="header">
                 <section className="logo_container">
-                    <a>
+                    <NavLink to="/">
                         <img src="https://www.cykelfaergen.info/assets/logo/logo.svg" width="88px" height="88px" alt="Cykelfærgen´s Logo" />
-                    </a>
+                    </NavLink>
                 </section>
                 <nav className="navigation">
-                    <ul>
-                        {
-                            Object.keys(local[region].navigation).map((key, index) => {
-                                return <li key={index}><Link className="" to={local[region].navigation[key].link}>{local[region].navigation[key].name}</Link></li>
-                            })
-                        }
-                    </ul>
+                {
+                    Object.keys(local[region].navigation).map((key, index) => {
+                        return <NavLink to={local[region].navigation[key].link} style={({ isActive }) => ({ 
+                                    color: isActive ? 'greenyellow' : 'blue' })}>
+                                    {local[region].navigation[key].name}
+                                </NavLink>
+                    })
+                }
                 </nav>
             </section>
             <section className="header"></section>

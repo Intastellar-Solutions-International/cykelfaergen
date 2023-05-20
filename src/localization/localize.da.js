@@ -7,7 +7,7 @@ export default {
         },
         price: {
             name: "Priser",
-            link: ""
+            link: "/price"
         },
         specialTours: {
             name: "Specail Tours",
