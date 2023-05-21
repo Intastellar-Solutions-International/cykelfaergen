@@ -4,7 +4,7 @@ export default function Footer(){
     const currentYear = new Date().getFullYear();
     return (<>
         <footer className="footer">
-            &copy; {currentYear} Parkinpeace. All rights reserved.
+            &copy; {currentYear} Foreningen Cykelfærgen´s Venner. All rights reserved.
         </footer>
     </>);
 }
